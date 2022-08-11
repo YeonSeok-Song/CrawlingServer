@@ -7,8 +7,6 @@ if (!DB_URL) {
     console.log("No DB-URL in Here!!");
 }
 
-console.log(DB_URL);
-
 mongoose.connect(DB_URL);
 const db = mongoose.connection;
 

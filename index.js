@@ -10,5 +10,5 @@ app.get('/', (req, res) => {
 })
 
 app.listen(PORT, function() {
-    console.log("start server! port number : 3000");
+    console.log("Server Start! port : 3000");
 })

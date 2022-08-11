@@ -4,6 +4,7 @@ const winstonDaily = require('winston-daily-rotate-file');
 const {combine, timestamp, label, printf, colorize} = winston.format;
 const logDir = 'logs';
 
+
 const logTemplate = printf(info => {
     return `${info.timestamp} ${info.level} : ${info.label} - ${info.message}`;
 })
@@ -73,7 +74,7 @@ if (process.env.NODE_ENV !== 'production') {
 //해당 stream은 morgan과도 연동 할 수 있다. 
 const stream = {
     write: message => {
-        const log = logContainer.get(message.split("/")[1]);
+        const log = logContainer.get(message.split("/")[1] + "Logger");
         log.info(message);
     }
 }
